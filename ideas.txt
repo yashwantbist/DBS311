@@ -3,8 +3,8 @@ HORSE RIDING CENTRE
 collection horses:
 	string name,
 	string colour,
-	string height,
-	number speed,
+	number height, // changed this to be a number, in inches to the withers (where the saddle goes)
+	number speed, // just a number from 1-10, with 1 being slow and 10 being fast. Arbitrary
 	Date dateborn,
 	number standard_priceperhour
 
