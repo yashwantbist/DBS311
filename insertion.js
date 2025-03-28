@@ -1,6 +1,6 @@
 let db = connect('mongodb://localhost/dbs311_a2');
 
-db.horses.insert(
+db.horses.insertMany(
 	[
 		{
 			name: "Shadow",
@@ -21,7 +21,7 @@ db.horses.insert(
 	]
 );
 
-db.customers.insert(
+db.customers.insertMany(
 	[
 		{
 			fname: "John",
@@ -58,7 +58,7 @@ db.customers.insert(
 	]
 );
 
-db.rentals.insert(
+db.rentals.insertMany(
 	[
 		{
 			horsename: "Shadow",
