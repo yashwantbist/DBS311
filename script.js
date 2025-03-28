@@ -5,39 +5,29 @@ let db = connect('mongodb://localhost/dbs311_a2');
 // script that runs them all in sequence 
 
 // creation
-db.createCollection("horses");
-db.createCollection("customers");
-db.createCollection("rentals");
+console.log("Collection creation");
+load("creation.js");
 
 // data insertion 
-// ...
-db.horses.insertOne({dateborn: new Date("2007-03-27")});
-
+console.log("Data insertion");
+load("insertion.js");
 
 // data viewing 
-// WRAP IN A TRY BLOCK
-// find all horses of a specific colour
-// find all horses within a range of ages
-// find all customers that have rented a horse of a specific colour
-// find the total rental fees collected from a specific customer
-// find the most popular horses based on number of rentals
-// ...
+console.log("Data view 1: find all horses of a specific colour");
+load("dataviewing1.js");
+console.log("Data view 2: find all horses within a range of ages");
+load("dataviewing2.js");
+console.log("Data view 3: find all customers that have rented a horse of a specific colour");
+load("dataviewing3.js");
+console.log("Data view 4: find the total rental fees collected from a specific customer");
+load("dataviewing4.js");
+console.log("Data view 5: find the most popular horses based on number of rentals");
+load("dataviewing5.js");
 
-try {
-	let q = db.horses.find({});
-
-	q.forEach(elem => {
-		console.log(elem.dateborn.getYear() + 1900);
-	});
-
-
-} catch (error) {
-	console.log(error);
-}
 
 // data aggregation
+// scripts here
 
 // deletion
-db.horses.drop();
-db.customers.drop();
-db.rentals.drop();
+console.log("Collection deletion");
+load("deletion.js");
