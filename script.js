@@ -26,7 +26,12 @@ load("dataviewing5.js");
 
 
 // data aggregation
-// scripts here
+console.log("Data aggregation 1: Calculate the average price/h for each speed of horse.");
+load("dataaggregation1.js");
+console.log("Data aggregation 2: Calculate the total rental fees collected per month.");
+load("dataaggregation2.js");
+console.log("Data aggregation 3: Find the 3 most popular horse colours among customers.");
+load("dataaggregation3.js");
 
 // deletion
 console.log("Collection deletion");
