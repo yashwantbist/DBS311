@@ -18,3 +18,16 @@ try {
 	console.log(error);
 }
 */
+
+// adapted from Yashwant's code
+
+try {
+	console.log(db.rentals.find({
+		"date_rented" : { // summer of '24
+			$gte : new Date("2024-06-01T00:00:00Z"),
+			$lte : new Date("2024-08-31T23:59:59Z")
+		}
+	}).pretty());
+} catch (error) {
+	console.log(error);
+}

@@ -15,7 +15,7 @@ load("insertion.js");
 // data viewing 
 console.log("Data view 1: find all horses of a specific colour");
 load("dataviewing1.js");
-console.log("Data view 2: find all horses within a range of ages");
+console.log("Data view 2: find all rentals within a range of dates");
 load("dataviewing2.js");
 console.log("Data view 3: find all customers that have rented a horse of a specific colour");
 load("dataviewing3.js");
