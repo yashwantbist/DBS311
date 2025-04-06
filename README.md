@@ -32,7 +32,8 @@ collection rentals:
 - number price_charged,
 - string payment_method
 
- - Sample data insertion
+And:
+- Sample data insertion
 
  #2. Query Data:
  - Find x by x.x -> multiplication
