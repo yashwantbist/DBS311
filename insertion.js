@@ -17,6 +17,15 @@ db.horses.insertMany(
 			speed: 6,
 			dateborn: new Date("2012-06-12"),
 			standard_priceperhour: 27.99
+		},
+
+		{
+			name: "Midnight",
+			colour: "Black",
+			height: 58,
+			speed: 6,
+			dateborn: new Date("2006-08-11"),
+			standard_priceperhour: 28.79
 		}
 	]
 );
