@@ -36,7 +36,7 @@ collection rentals:
 
  #2. Query Data:
  - Find x by x.x -> multiplication
-  - Find horse on rental
+ -- Find horse on rental
  - Find x by y.x -> cross checking
 
  #3. Data aggregation: /*These are one-degree aggregated data reports with business significance*/
