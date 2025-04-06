@@ -4,6 +4,7 @@
 #Tasks:
 
 #1. Data Scheme Design:
+
 collection horses:
 	string name,
 	string colour,
