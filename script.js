@@ -19,7 +19,7 @@ console.log("Data view 2: find all rentals within a range of dates");
 load("dataviewing2.js");
 console.log("Data view 3: find all customers that have rented a horse of a specific colour");
 load("dataviewing3.js");
-console.log("Data view 4: find the total rental fees collected from a specific customer");
+console.log("Data view 4: find the total rental fees collected from a specific customer with input as their email address");
 load("dataviewing4.js");
 console.log("Data view 5: find the most popular horses based on number of rentals");
 load("dataviewing5.js");
@@ -32,6 +32,12 @@ console.log("Data aggregation 2: Calculate the total rental fees collected per m
 load("dataaggregation2.js");
 console.log("Data aggregation 3: Find the 3 most popular horse colours among customers.");
 load("dataaggregation3.js");
+
+// data update
+console.log("Data update 1: Update rental fees for horses with specific speed.");
+load("update1.js");
+console.log("Data update 2: Update the contact information (phone number and address) for a specific customer.");  
+load("update2.js");
 
 // deletion
 console.log("Collection deletion");
