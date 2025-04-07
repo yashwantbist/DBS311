@@ -1,6 +1,5 @@
 // Mongo DB shell commands
 
-
 let db = connect('mongodb://localhost/dbs311_a2');
 
 db.horses.insertMany(
@@ -37,7 +36,7 @@ db.horses.insertMany(
 		{ name: "Spirit", colour: "Palomino", height: 65, speed: 10, dateborn: new Date("2013-03-01"), standard_priceperhour: 69.99 },
 		{ name: "Flicka", colour: "Bay", height: 60, speed: 6, dateborn: new Date("2017-02-14"), standard_priceperhour: 29.99 },
 		{ name: "Star", colour: "Dapple Grey", height: 59, speed: 4, dateborn: new Date("2019-04-08"), standard_priceperhour: 19.99 },
-		{ name: "Whisper", colour: "Cream", height: 62, speed: 5, dateborn: new Date("2020-01-01"), standard_priceperhour: 15.99 }
+		{ name: "Whisper", colour: "Cream", height: 62, speed: 5, dateborn: new Date("2020-01-01"), standard_priceperhour: 15.95 }
 	]
 );
 
