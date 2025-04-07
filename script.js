@@ -38,6 +38,8 @@ console.log("Data update 1: Update rental fees for horses with specific speed.")
 load("update1.js");
 console.log("Data update 2: Update the contact information (phone number and address) for a specific customer.");  
 load("update2.js");
+console.log("Data update 3: Delete a specific customer and all their rentals.");
+load("update3.js");
 
 // deletion
 console.log("Collection deletion");
