@@ -20,7 +20,7 @@ const hnames = ["Rocket", "Darby", "Kane", "Tyler", "Beau", "Whiz", "Solomon", "
 "Tiggy", "Kurly", "Charmer", "Chi Chi", "Pablo", "Sparky", "Chubbs", "Twiggy", "Snoopy", "Amie", 
 "Purdy", "Chocolate", "Edsel", "Eddy", "Parker", "Chivas", "Abigail", "Jojo", "Barkley", "Lincoln", 
 "Stinky", "Homer", "Beauty"];
-
+ 
 const colours = ["Brown", "Black", "Gold", "Orange", "White", "Silver", "Chestnut", "Palomino", 
 "Bay", "Dapple Grey", "Cream", "Red", "Sorrel", "Buckskin", "Dun", "Pinto", "Roan", "Spotted"];
 
@@ -462,16 +462,18 @@ try {
 	
 	for (let i = 0; i < target_num_horses; i++) {
 		let tmp_speed = rand() % 10;
+		let tmp_year = ((rand() % 15) + 2002); // 2002-2017
+		let	tmp_month = ((rand() % 12) + 1);
+		let tmp_day = ((rand() % 28) + 1);
+		let dateborn = new Date(tmp_year, tmp_month, tmp_day);
+
 		horse_array.push(
 			{
 				name : hnames[rand() % hnames.length],
 				colour : colours[rand() % colours.length],
 				height : (rand() % 40) + 40,
 				speed : tmp_speed,
-				dateborn : new Date(
-					((rand() % 15) + 2002) + "-" +
-					((rand() % 12) + 1) + "-" +
-					((rand() % 28) + 1) + "-"),
+				dateborn : dateborn,	// shows as UTC, but that's fine
 				standard_priceperhour : tmp_speed * 12.1 + (rand() % 5)
 			}
 		);
@@ -485,6 +487,11 @@ try {
 											 ((rand() % 899) + 100) + "-" +
 											 ((rand() % 8999) + 1000);
 
+		let tmp_year = (rand() % 60) + 1970; // 1970-2030
+		let tmp_month = (rand() % 12) + 1;	// 1-12
+		let tmp_day = (rand() % 28) + 1;	// 1-28
+		let tmp_dob = new Date(tmp_year, tmp_month, tmp_day); // shows as UTC, but that's fine
+
 		cust_array.push(
 			{
 				fname : tmp_fname,
@@ -497,8 +504,8 @@ try {
 						city : cities[rand() % cities.length],
 						province : rand() % 2 == 0 ? "ON" : provinces[rand() % provinces.length]
 						// no postal code
-					}
-				// no DoB
+					},
+				DoB : tmp_dob // shows as UTC, but that's fine
 			}
 		);
 
@@ -513,14 +520,27 @@ try {
 			time_rented_for * horse.standard_priceperhour : 
 			time_out * 1.2 * horse.standard_priceperhour;
 
+			let tmp_year = (rand() % 15) + 2010;
+            let tmp_month = (rand() % 12) + 1;
+            let tmp_day = (rand() % 28) + 1;
+            let tmp_hour = (rand() % 7) + 8; // 8am to 4pm locally. In Mongo Compass/Atlas, this will display as UTC time.
+            let tmp_minute = (rand() % 60); 
+            let tmp_second = (rand() % 60);
+
+            let date_rented = new Date(tmp_year,tmp_month,tmp_day,tmp_hour,tmp_minute,tmp_second);
+            let date_expected = new Date(date_rented.getTime() + time_rented_for * 60 * 60 * 1000);
+            let date_returned = new Date(date_rented.getTime() + time_out * 60 * 60 * 1000);
+
 		rental_array.push(
 			{
 				horsename : horse.name,
 				contactEmail : cust.email,
 				contactPhonenum : cust.phonenum,
 				price_charged : tmp_price_charged,
-				payment_method : paymentMethods[rand() % paymentMethods.length]
-				// you'll notice that the rental dates aren't here. That's because I got lazy.
+				payment_method : paymentMethods[rand() % paymentMethods.length],
+				date_rented : date_rented,
+				date_expected : date_expected,
+				date_returned : date_returned
 				
 			}
 		);
