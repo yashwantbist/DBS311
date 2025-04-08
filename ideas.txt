@@ -1,0 +1,29 @@
+HORSE RIDING CENTRE
+
+collection horses:
+	string name,
+	string colour,
+	number height, // changed this to be a number, in inches to the withers (where the saddle goes)
+	number speed, // just a number from 1-10, with 1 being slow and 10 being fast. Arbitrary
+	Date dateborn,
+	number standard_priceperhour
+
+collection customers:
+	string fname,
+	string lname,
+	string email, // use as primary key?
+	string phonenum,
+	json address:
+		...
+	Date DoB // see Date() object on mongo docs
+					 // probably not many rows will have this
+
+collection rentals:
+	string horsename,
+	string contactEmail,
+	string contactPhonenum,
+	Date date_rented,
+	Date date_expected,
+	Date date_returned,
+	number price_charged,
+	string payment_method
